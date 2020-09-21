@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Js Color -->
+    <!-- <script src="jscolor.js"></script> -->
     <title>Card Editor</title>
 </head>
 <body>
@@ -20,10 +22,8 @@
                 </svg>
                 <span>Home</span>
             </div>
-            <div class="cardname" contenteditable="true">
-                Card Name
-            </div>
-            <div class="download-btn flex-center">
+            <input id="cardName" class="cardname" value="Card Name">
+            <div id="downloadCanvas" class="download-btn flex-center">
                 Download
             </div>
         </nav>
@@ -73,7 +73,10 @@
         <div id="textSidebarExt" class="extended-sidebar hide-element">text</div>
         <!-- Properties of an element will be shown here -->
         <div class="property-bar flex-center">
-            <div></div> <!-- Temp div (delete it when there is another element in this bar) -->
+            <!-- <input data-jscolor="" value="2CAFFE"> -->
+            <!-- <div id="canvasColor" class="canvas-color"></div> -->
+            <input type="color" name="" id="canvasColor">
+            <input type="color" name="" id="objectColor">
             <div class="delete-btn flex-center" onclick="deleteObject()">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 6H5H21" stroke="#FFB703" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -91,8 +94,9 @@
         </div>
     </div>
 
-    
+    <!-- Fabric JS Library -->
     <script src="js/fabric.min.js"></script>
+    <!-- Custom JS -->
     <script src="js/index.js"></script>
 </body>
 </html>

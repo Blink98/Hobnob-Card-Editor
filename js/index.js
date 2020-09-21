@@ -52,7 +52,12 @@ const canvas = new fabric.Canvas('canvas', {
     width: 595,
     height: 340,
 });
-
+// Change Canvas Color
+let canvasColor = document.getElementById("canvasColor");
+canvasColor.addEventListener("input", function () {
+    canvas.setBackgroundColor(`${canvasColor.value}`, canvas.renderAll.bind(canvas));    
+})
+// Customising object controls
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';
 fabric.Object.prototype.cornerStyle = 'circle';
@@ -68,14 +73,14 @@ function deleteObject() {
 // Adding Rectangle to the canvas
 function addRectangle() {
     var rect = new fabric.Rect({
-      left: 100,
-      top: 100,
-      fill: 'yellow',
-      width: 200,
-      height: 100,
-      objectCaching: false,
-      stroke: 'blue',
-      strokeWidth: 0
+        left: 100,
+        top: 100,
+        fill: 'yellow',
+        width: 200,
+        height: 100,
+        objectCaching: false,
+        stroke: 'blue',
+        strokeWidth: 0
     });
 
     canvas.add(rect);
@@ -88,4 +93,25 @@ addRectBtn.addEventListener("click", function () {
    addRectangle(); 
 });
 
+let objectColor = document.getElementById("objectColor");
+objectColor.addEventListener("input", function () {
+    var activeObject = canvas.getActiveObject();
+    activeObject.fill = `${objectColor.value}`;
+    canvas.renderAll();    
+});
+
 canvas.renderAll();
+
+// Download the Canvas as PNG.
+document.getElementById("downloadCanvas").addEventListener("click", function () {
+    // Name of the file/card
+    let cardName = document.getElementById("cardName").value;
+    // Referencing the canvas
+    let canvas = document.getElementById("canvas");
+    canvas.click();
+    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    let link = document.createElement('a');
+    link.download = `${cardName}.png`;
+    link.href = image;
+    link.click();
+});

@@ -65,7 +65,17 @@ body {
 
             .cardname {
                 color: $header-font-color;
+                background: rgba(255, 255, 255, 0);
+                border: none;
+                border-radius: 8px;
+                text-align: center;
                 font-size: 18px;
+                padding: 0.5rem 1rem;
+                width: 30%;
+
+                &:hover, &:focus {
+                    border: 2px solid $header-font-color;
+                }
             }
 
             .download-btn {
