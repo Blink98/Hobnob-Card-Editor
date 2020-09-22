@@ -47,6 +47,10 @@ textBtn.addEventListener("click", function () {
 });
 
 
+
+
+
+
 // Canvas
 const canvas = new fabric.Canvas('canvas', {
     width: 595,
@@ -55,7 +59,8 @@ const canvas = new fabric.Canvas('canvas', {
 // Change Canvas Color
 let canvasColor = document.getElementById("canvasColor");
 canvasColor.addEventListener("input", function () {
-    canvas.setBackgroundColor(`${canvasColor.value}`, canvas.renderAll.bind(canvas));    
+    document.getElementById("canvasColorBox").style.background = `${canvasColor.value}`;
+    canvas.setBackgroundColor(`${canvasColor.value}`, canvas.renderAll.bind(canvas));  
 })
 // Customising object controls
 fabric.Object.prototype.transparentCorners = false;
@@ -70,16 +75,21 @@ function deleteObject() {
     canvas.discardActiveObject().renderAll()
 }
 
+document.addEventListener("keydown", function(event) {
+    if (event.key == "Delete") {
+        deleteObject();
+    }
+});
+
 // Adding Rectangle to the canvas
 function addRectangle() {
     var rect = new fabric.Rect({
         left: 100,
         top: 100,
         fill: 'yellow',
-        width: 200,
+        width: 100,
         height: 100,
         objectCaching: false,
-        stroke: 'blue',
         strokeWidth: 0
     });
 
@@ -88,11 +98,51 @@ function addRectangle() {
 }
 
 const addRectBtn = document.getElementById("addRectBtn");
-
 addRectBtn.addEventListener("click", function () {
    addRectangle(); 
 });
 
+// Adding Circle to the canvas
+function addCircle() {
+    var circle = new fabric.Circle({
+        left: 100,
+        top: 100,
+        fill: 'green',
+        objectCaching: false,
+        radius: 60
+    });
+
+    canvas.add(circle);
+    canvas.setActiveObject(circle);
+}
+
+const addCircleBtn = document.getElementById("addCircleBtn");
+addCircleBtn.addEventListener("click", function () {
+    addCircle();
+});
+
+// Adding Triangle to the canvas
+function addTriangle() {
+    var circle = new fabric.Triangle({
+        left: 100,
+        top: 100,
+        fill: 'red',
+        objectCaching: false,
+        width: 100,
+        height: 100
+    });
+
+    canvas.add(circle);
+    canvas.setActiveObject(circle);
+}
+
+const addTriangleBtn = document.getElementById("addTriangleBtn");
+addTriangleBtn.addEventListener("click", function () {
+    addTriangle();
+});
+
+
+// Change color of selected object
 let objectColor = document.getElementById("objectColor");
 objectColor.addEventListener("input", function () {
     var activeObject = canvas.getActiveObject();

@@ -160,13 +160,47 @@ body {
             padding: 0 1rem;
             justify-content: space-between;
 
-            .delete-btn {
-                padding: 8px;
-                border-radius: 4px;
-                
-                &:hover {
-                    cursor: pointer;
-                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            .right-side-btns {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                column-gap: 1rem;
+
+                .canvas-color-container {
+                    padding: 0 8px;
+                    border-radius: 4px;
+                    color: $header-btn-font-color;
+
+                    &:hover {
+                        cursor: pointer;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .canvas-color-box {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 4px;
+                        background: $canvas-bg;
+                        border: 1px solid #000;
+                    }
+
+                    input {
+                        width: 0;
+                        opacity: 0;
+                    }
+
+                    span {
+                        margin-left: 1rem;
+                    }
+                }
+
+                .delete-btn {
+                    padding: 8px;
+                    border-radius: 4px;
+                    
+                    &:hover {
+                        cursor: pointer;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                    }
                 }
             }
         }

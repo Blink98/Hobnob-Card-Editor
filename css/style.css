@@ -186,12 +186,50 @@ body .body .property-bar {
           justify-content: space-between;
 }
 
-body .body .property-bar .delete-btn {
+body .body .property-bar .right-side-btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+body .body .property-bar .right-side-btns .canvas-color-container {
+  padding: 0 8px;
+  border-radius: 4px;
+  color: #ffb703;
+}
+
+body .body .property-bar .right-side-btns .canvas-color-container:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+body .body .property-bar .right-side-btns .canvas-color-container .canvas-color-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #000;
+}
+
+body .body .property-bar .right-side-btns .canvas-color-container input {
+  width: 0;
+  opacity: 0;
+}
+
+body .body .property-bar .right-side-btns .canvas-color-container span {
+  margin-left: 1rem;
+}
+
+body .body .property-bar .right-side-btns .delete-btn {
   padding: 8px;
   border-radius: 4px;
 }
 
-body .body .property-bar .delete-btn:hover {
+body .body .property-bar .right-side-btns .delete-btn:hover {
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
