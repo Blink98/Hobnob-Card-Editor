@@ -58,7 +58,9 @@
         </div>
         <!-- Extended Sidebars -->
         <div id="templateSidebarExt" class="extended-sidebar hide-element">template</div>
-        <div id="uploadSidebarExt" class="extended-sidebar hide-element">upload</div>
+        <div id="uploadSidebarExt" class="extended-sidebar hide-element">
+            <input type="file" name="" id="uploadImageInput">
+        </div>
         <div id="elementSidebarExt" class="element-sidebar-ext extended-sidebar hide-element">
             <div id="addRectBtn" class="add-element-btn flex-center">
                 Add Rectangle
@@ -69,15 +71,22 @@
             <div id="addCircleBtn" class="add-element-btn flex-center">
                 Add Circle
             </div>
+            <!-- <div id="addLineBtn" class="add-element-btn flex-center">
+                Add Line
+            </div> -->
         </div>
         <div id="textSidebarExt" class="extended-sidebar hide-element">text</div>
         <!-- Properties of an element will be shown here -->
         <div class="property-bar flex-center">
-            <!-- <input data-jscolor="" value="2CAFFE"> -->
-            <!-- <div id="canvasColor" class="canvas-color"></div> -->
-            <div class="left-side-btns">
+            <div class="left-side-btns">    
                 <div id="objectColorBox" class="object-color-box"></div>
                 <input type="color" id="objectColor">
+                <label for="width">Width: </label>
+                <input type="text" name="width" id="width">
+                <label for="height">Height: </label>
+                <input type="text" name="height" id="height">
+                <!-- <button onclick="groupObjects()">Group</button>
+                <button onclick="ungroupObjects()">Ungroup</button> -->
             </div>
             <div class="right-side-btns">
                 <div id="canvasColorContainer" class="canvas-color-container flex-center" onclick="canvasColor.click()">
@@ -96,7 +105,7 @@
             </div>
         </div>
         <!-- Workarea (The grey area that acts as the container of canvas) -->
-        <div class="workarea"></div>
+        <div class="workarea" onclick="removeSelection()"></div>
         <!-- Canvas (User will create the Card here) -->
         <div class="canvas">
             <canvas id="canvas"></canvas>

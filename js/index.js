@@ -123,7 +123,7 @@ addCircleBtn.addEventListener("click", function () {
 
 // Adding Triangle to the canvas
 function addTriangle() {
-    var circle = new fabric.Triangle({
+    var triangle = new fabric.Triangle({
         left: 100,
         top: 100,
         fill: 'red',
@@ -132,15 +132,14 @@ function addTriangle() {
         height: 100
     });
 
-    canvas.add(circle);
-    canvas.setActiveObject(circle);
+    canvas.add(triangle);
+    canvas.setActiveObject(triangle);
 }
 
 const addTriangleBtn = document.getElementById("addTriangleBtn");
 addTriangleBtn.addEventListener("click", function () {
     addTriangle();
 });
-
 
 // Change color of selected object
 let objectColor = document.getElementById("objectColor");
@@ -149,11 +148,103 @@ objectColor.addEventListener("input", function () {
     activeObject.fill = `${objectColor.value}`;
     canvas.renderAll();    
 });
+// Deactivate the active object.
+function removeSelection() {
+    canvas.discardActiveObject();
+    canvas.renderAll();
+}
+
+// Change width of selected object
+document.getElementById("width").addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+        let activeObject = canvas.getActiveObject();
+        activeObject.set("width", parseInt(`${width.value}`) / activeObject.scaleX);
+        canvas.renderAll();
+    } 
+});
+
+var activeObject = canvas.getActiveObject();
+if (activeObject) {
+    console.log(activeObject);
+}
+
+
+// Change height of selected object
+document.getElementById("height").addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+        let activeObject = canvas.getActiveObject();
+        activeObject.set("height", parseInt(`${height.value}`) / activeObject.scaleY);
+        canvas.renderAll();
+    }
+});
+
+// // Group objects
+// function groupObjects() {
+//     // canvas.getActiveObjects().forEach((object) => {
+//     //     // do something with object
+//     //     console.log(object);
+//     //     var activeGroup = [];
+//     //     activeGroup.push(object);
+//     // });
+//     var group = new fabric.Group(canvas.getActiveObjects());
+//     var activeGroup = [];
+//     for (let object in group) {
+//         activeGroup.push(object.clone());
+//     }
+
+//     canvas.clear().renderAll();
+//     canvas.add(activeGroup);
+//     // var activegroup = canvas.getActiveGroup();
+//     // var objectsInGroup = activegroup.getObjects();    
+    
+//     // activegroup.clone(function(newgroup) {
+//     //     canvas.discardActiveGroup();
+//     //     objectsInGroup.forEach(function(object) {
+// 	// 	    canvas.remove(object);  
+// 	//     });
+//     //     canvas.add(newgroup); 
+//     // });
+// }
 
 canvas.renderAll();
 
+// Upload image
+document.getElementById('uploadImageInput').onchange = function uploadImage(e) {
+    let reader = new FileReader();
+      reader.onload = function (event){
+        let imgObj = new Image();
+        imgObj.src = event.target.result;
+        imgObj.onload = function () {
+            let image = new fabric.Image(imgObj);
+            // image.set({
+            //     angle: 0
+            // });
+            canvas.centerObject(image);
+            canvas.add(image);
+            canvas.renderAll();
+        }
+    }
+    reader.readAsDataURL(e.target.files[0]);
+}
+var selected_obj = new fabric.Object();
+
+// document.getElementById("width").addEventListener("blur", function(event) {
+//     // if (selected_obj != null) {
+//     //     selected_obj.set("width",Math.round(parseInt($(this).val())));
+//     //     canvas.renderAll();
+//     // }
+//     if(selected_obj == canvas.getActiveObject() && selected_obj != null){
+//         document.getElementById('width').value = Math.round(selected_obj.get('width') * selected_obj.get('scaleX'));
+//     } else {
+//         document.getElementById('width').value = "";
+//     }
+// });
+
+
 // Download the Canvas as PNG.
 document.getElementById("downloadCanvas").addEventListener("click", function () {
+    // Removing Selection
+    removeSelection();
     // Name of the file/card
     let cardName = document.getElementById("cardName").value;
     // Referencing the canvas
