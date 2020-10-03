@@ -24,7 +24,7 @@
             </div>
             <input id="cardName" class="cardname" value="Card Name">
             <div id="downloadCanvas" class="download-btn flex-center">
-                Download
+                Download    
             </div>
         </nav>
         <!-- Sidebar contains options -->
@@ -57,7 +57,17 @@
             </div>
         </div>
         <!-- Extended Sidebars -->
-        <div id="templateSidebarExt" class="extended-sidebar hide-element">template</div>
+        <div id="templateSidebarExt" class="template-sidebar-ext extended-sidebar hide-element">
+            <div onclick="loadTemplate1()" id="addTemp1Btn" class="add-template-btn flex-center">
+                Add Template 1
+            </div>
+            <div onclick="loadTemplate2()" id="addTemp2Btn" class="add-template-btn flex-center">
+                Add Template 2
+            </div>
+            <div id="addTemp3Btn" class="add-template-btn flex-center">
+                Add Template 3
+            </div>
+        </div>
         <div id="uploadSidebarExt" class="extended-sidebar hide-element">
             <input type="file" name="" id="uploadImageInput">
         </div>
@@ -75,18 +85,103 @@
                 Add Line
             </div> -->
         </div>
-        <div id="textSidebarExt" class="extended-sidebar hide-element">text</div>
+        <div id="textSidebarExt" class="extended-sidebar hide-element">
+            <div>
+                <button class="button Content" onclick="Addtext()" style="text-align: center;">ADD TEXT</button>
+              </div>
+              <div class="boxed">
+                <label for="textColor" class="Content">Text colour:</label>
+                <input type="color" value="" id="textColor" size="10">
+              </div>
+              <div class="boxed">
+                <label for="fontFamily" class="Content">Font family:</label>
+                <select id="fontFamily">
+                  <option value="arial">Arial</option>
+                  <option value="helvetica" selected>Helvetica</option>
+                  <option value="myriad pro">Myriad Pro</option>
+                  <option value="delicious">Delicious</option>
+                  <option value="verdana">Verdana</option>
+                  <option value="georgia">Georgia</option>
+                  <option value="courier">Courier</option>
+                  <option value="comic sans ms">Comic Sans MS</option>
+                  <option value="impact">Impact</option>
+                  <option value="monaco">Monaco</option>
+                  <option value="optima">Optima</option>
+                  <option value="hoefler text">Hoefler Text</option>
+                  <option value="plaster">Plaster</option>
+                  <option value="engagement">Engagement</option>
+                </select>
+        
+              </div>
+              <div class="boxed">
+                <label for="textAlign" class="Content">Text align:</label>
+                <select id="textAlign">
+                  <option value="left">Left</option>
+                  <option value="center">Center</option>
+                  <option value="right">Right</option>
+                  <option value="justify">Justify</option>
+                </select>
+              </div>
+              <div class="boxed">
+                <label for="textbgcolor" class="Content">Background color:</label>
+                <input type="color" value="" id="textbgcolor" size="10">
+              </div>
+              <div class="boxed">
+                <label for="textlinesbgcolor" class="Content">Background text color:</label>
+                <input type="color" value="" id="textlinesbgcolor" size="10">
+              </div>
+              <div class="boxed">
+                <label for="textstrokecolor" class="Content">Stroke color:</label>
+                <input type="color" value="" id="textstrokecolor">
+              </div>
+              <div class="boxed-1">
+                <label for="textstrokewidth" class="Content">Stroke width:</label>
+                <input type="range" value="1" min="1" max="10" id="textstrokewidth">
+              </div>
+              <div class="boxed-1">
+                <label for="textfontsize" class="Content">Font size:</label>
+                <input type="range" value="" min="1" max="120" step="1" id="textfontsize">
+              </div>
+              <div class="boxed-1">
+                <label for="textlineheight" class="Content">Line height:</label>
+                <input type="range" value="" min="0" max="10" step="0.1" id="textlineheight">
+              </div>
+              <div id="text-controls-additional">
+                <div class="boxed Content">
+                  <input type='checkbox' name='fonttype' id="text-cmd-bold">
+                  Bold        
+                  <input type='checkbox' name='fonttype' id="text-cmd-italic"> Italic
+                </div>
+              </div>
+        </div>
         <!-- Properties of an element will be shown here -->
         <div class="property-bar flex-center">
-            <div class="left-side-btns">    
-                <div id="objectColorBox" class="object-color-box"></div>
-                <input type="color" id="objectColor">
-                <label for="width">Width: </label>
-                <input type="text" name="width" id="width">
-                <label for="height">Height: </label>
-                <input type="text" name="height" id="height">
+            <div class="left-side-btns flex-center">
+                <div onclick="openObjectColorPicker()" id="objectColorContainer" class="object-color-container">
+                    <div id="objectColorBox" class="object-color-box"></div>
+                    <input type="color" id="objectColor">
+                </div>
+                <div class="object-size-container">
+                    <div class="input-container flex-center">
+                        <label class="label" for="width">Width: </label>
+                        <input class="input" type="text" name="width" id="width">
+                    </div>
+                    <div class="input-container flex-center">
+                        <label class="label" for="height">Height: </label>
+                        <input class="input" type="text" name="height" id="height">
+                    </div>
+                </div>
                 <!-- <button onclick="groupObjects()">Group</button>
                 <button onclick="ungroupObjects()">Ungroup</button> -->
+                <div class="object-layer-position-btn-container">
+                    <button class="object-layer-position-btn" onclick="sendBackwards()">Send Backwards</button>
+                    <button class="object-layer-position-btn" onclick="sendToBack()">Send to Back</button>
+                    <button class="object-layer-position-btn" onclick="bringForward()">Bring Forward</button>
+                    <button class="object-layer-position-btn" onclick="bringToFront()">Bring to Front</button>
+                </div>
+
+                <button id="group" class="btn btn-light"> <strong>Group</strong></button>
+                <button id="ungroup" class="btn btn-light"><strong>Ungroup</strong></button>
             </div>
             <div class="right-side-btns">
                 <div id="canvasColorContainer" class="canvas-color-container flex-center" onclick="canvasColor.click()">

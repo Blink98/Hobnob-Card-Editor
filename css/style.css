@@ -145,7 +145,7 @@ body .body .extended-sidebar {
   width: 360px;
 }
 
-body .body .element-sidebar-ext {
+body .body .element-sidebar-ext, body .body .template-sidebar-ext {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -158,13 +158,13 @@ body .body .element-sidebar-ext {
   padding: 1rem;
 }
 
-body .body .element-sidebar-ext .add-element-btn {
+body .body .element-sidebar-ext .add-element-btn, body .body .element-sidebar-ext .add-template-btn, body .body .template-sidebar-ext .add-element-btn, body .body .template-sidebar-ext .add-template-btn {
   color: white;
   border-radius: 10px;
   border: 1px solid white;
 }
 
-body .body .element-sidebar-ext .add-element-btn:hover {
+body .body .element-sidebar-ext .add-element-btn:hover, body .body .element-sidebar-ext .add-template-btn:hover, body .body .template-sidebar-ext .add-element-btn:hover, body .body .template-sidebar-ext .add-template-btn:hover {
   cursor: pointer;
   color: #ffb703;
   border: 1px solid #ffb703;
@@ -184,6 +184,91 @@ body .body .property-bar {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+body .body .property-bar .left-side-btns .object-color-container {
+  padding: 8px;
+  border-radius: 4px;
+  color: #ffb703;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+}
+
+body .body .property-bar .left-side-btns .object-color-container:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+body .body .property-bar .left-side-btns .object-color-container .object-color-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #000;
+}
+
+body .body .property-bar .left-side-btns .object-color-container input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+body .body .property-bar .left-side-btns .object-size-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  margin: 0 0.5em;
+}
+
+body .body .property-bar .left-side-btns .object-size-container .input-container .label {
+  color: #ffb703;
+  margin-right: 0.5em;
+}
+
+body .body .property-bar .left-side-btns .object-size-container .input-container .input {
+  padding: 0.5rem;
+  border: 1px solid #8d8d8d;
+  border-radius: 6px;
+  width: 60px;
+}
+
+body .body .property-bar .left-side-btns .object-size-container .input-container .input:hover, body .body .property-bar .left-side-btns .object-size-container .input-container .input:focus {
+  border-color: #ffb703;
+}
+
+body .body .property-bar .left-side-btns .object-layer-position-btn-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+body .body .property-bar .left-side-btns .object-layer-position-btn-container .object-layer-position-btn {
+  background: white;
+  color: #ffb703;
+  border-radius: 6px;
+  border: 1px solid #ffb703;
+  padding: 0.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 600;
+}
+
+body .body .property-bar .left-side-btns .object-layer-position-btn-container .object-layer-position-btn:hover {
+  cursor: pointer;
+  background: #ffb703;
+  color: white;
+  font-weight: bold;
 }
 
 body .body .property-bar .right-side-btns {
@@ -257,5 +342,38 @@ body .body .canvas {
 
 body .body .hide-element {
   display: none;
+}
+
+body .boxed {
+  width: 300px;
+  height: 40px;
+  border: 1px solid white;
+  margin: auto;
+  margin-top: 10px;
+  text-align: left;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+body .boxed-1, body .button {
+  width: 300px;
+  height: 50px;
+  border: 1px solid white;
+  margin: auto;
+  margin-top: 10px;
+  text-align: left;
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: #404040;
+}
+
+body .button:hover {
+  background-image: none !important;
+  background-color: #ffb703 !important;
+}
+
+body .Content {
+  color: #f4f9f4;
+  font-family: sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
