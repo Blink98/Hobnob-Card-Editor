@@ -73,13 +73,19 @@
         </div>
         <div id="elementSidebarExt" class="element-sidebar-ext extended-sidebar hide-element">
             <div id="addRectBtn" class="add-element-btn flex-center">
-                Add Rectangle
+                <svg width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="156" height="156" fill="#FFB703"/>
+                </svg>                                    
             </div>
             <div id="addTriangleBtn" class="add-element-btn flex-center">
-                Add Triangle
+                <svg width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M78 0L156 156H0L78 0Z" fill="#FFB703"/>
+                </svg>                    
             </div>
             <div id="addCircleBtn" class="add-element-btn flex-center">
-                Add Circle
+                <svg width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="78" cy="78" r="78" fill="#FFB703"/>
+                </svg>
             </div>
             <!-- <div id="addLineBtn" class="add-element-btn flex-center">
                 Add Line
@@ -180,13 +186,15 @@
                     <button class="object-layer-position-btn" onclick="bringToFront()">Bring to Front</button>
                 </div>
 
-                <button id="group" class="btn btn-light"> <strong>Group</strong></button>
-                <button id="ungroup" class="btn btn-light"><strong>Ungroup</strong></button>
+                <div class="grouping-ungrouping-btns-container">
+                    <button id="group" class="btn btn-light"> <strong>Group</strong></button>
+                    <button id="ungroup" class="btn btn-light"><strong>Ungroup</strong></button>
+                </div>
             </div>
             <div class="right-side-btns">
                 <div id="canvasColorContainer" class="canvas-color-container flex-center" onclick="canvasColor.click()">
                     <div id="canvasColorBox" class="canvas-color-box"></div>
-                    <span>Canvas</span>
+                    <span>Background</span>
                     <input type="color" id="canvasColor">
                 </div>
                 <div class="delete-btn flex-center" onclick="deleteObject()">
