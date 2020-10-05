@@ -119,13 +119,14 @@ function Paste() {
 	});
 }
 
-
+// Default object's color
+let defaultObjectColor = "#ffb703"
 // Adding Rectangle to the canvas
 function addRectangle() {
     var rect = new fabric.Rect({
         left: 100,
         top: 100,
-        fill: 'yellow',
+        fill: `${defaultObjectColor}`,
         width: 100,
         height: 100,
         objectCaching: false,
@@ -145,7 +146,7 @@ function addCircle() {
     var circle = new fabric.Circle({
         left: 100,
         top: 100,
-        fill: 'green',
+        fill: `${defaultObjectColor}`,
         objectCaching: false,
         radius: 60
     });
@@ -163,7 +164,7 @@ function addTriangle() {
     var triangle = new fabric.Triangle({
         left: 100,
         top: 100,
-        fill: 'red',
+        fill: `${defaultObjectColor}`,
         objectCaching: false,
         width: 100,
         height: 100
@@ -176,6 +177,25 @@ const addTriangleBtn = document.getElementById("addTriangleBtn");
 addTriangleBtn.addEventListener("click", function () {
     addTriangle();
 });
+
+// Add Hexagon to the canvas
+function addHexagon() {
+  var hexagonShape = [ 	{x:850,y:75},
+    {x:958,y:137.5},
+    {x:958,y:262.5},
+    {x:850,y:325},
+    {x:742,y:262.5},
+    {x:742,y:137.5},
+    ];
+  var hexagon = new fabric.Polygon(hexagonShape, {
+    top: 60,
+    left: 100,
+    objectCaching: false,
+    fill: `${defaultObjectColor}`
+  });
+  canvas.add(hexagon);
+  canvas.setActiveObject(hexagon);
+}
 
 
 // Change color of selected object
