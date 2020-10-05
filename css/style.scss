@@ -133,8 +133,9 @@ body {
 
         .element-sidebar-ext, .template-sidebar-ext {
             display: grid;
+            overflow: auto;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 172px);
+            grid-template-rows: repeat(8, 172px);
             column-gap: 1rem;
             row-gap: 1rem;
             padding: 1rem;
