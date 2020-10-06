@@ -163,7 +163,7 @@ body .body .element-sidebar-ext .add-element-btn, body .body .element-sidebar-ex
   color: white;
   border-radius: 10px;
   border: 1px solid white;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 body .body .element-sidebar-ext .add-element-btn:hover, body .body .element-sidebar-ext .add-template-btn:hover, body .body .template-sidebar-ext .add-element-btn:hover, body .body .template-sidebar-ext .add-template-btn:hover {
