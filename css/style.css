@@ -181,6 +181,22 @@ body .body .element-sidebar-ext .add-element-btn svg, body .body .element-sideba
   height: 100%;
 }
 
+body .body .element-sidebar-ext {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (109px)[2];
+      grid-template-rows: repeat(2, 109px);
+}
+
+body .body .element-sidebar-ext .add-element-btn {
+  padding: 0;
+  border: none;
+}
+
+body .body .element-sidebar-ext .add-element-btn:hover {
+  border: none;
+}
+
 body .body .property-bar {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;

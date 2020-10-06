@@ -165,7 +165,17 @@ body {
         }
 
         .element-sidebar-ext {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2,109px);
 
+            .add-element-btn {
+                padding: 0;
+                border: none;
+
+                &:hover {
+                    border: none;
+                }
+            }
         }
 
         .property-bar { 
