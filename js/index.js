@@ -1,19 +1,19 @@
 // Closing 3 extended sidebars and opening/closing 1.
 let extendedSidebars = document.getElementsByClassName("extended-sidebar");
 function togglingCurrentExtSidebar(currentExtSidebar) {
-    for (let numOfExtendedSidebar=0; numOfExtendedSidebar<4; numOfExtendedSidebar++) {
+    for (let numOfExtendedSidebar=0; numOfExtendedSidebar<6; numOfExtendedSidebar++) {
         let sidebarBtnPath = document.getElementsByClassName("sidebar-btn")[numOfExtendedSidebar].childNodes[1].childNodes[1];
         let sidebarBtnLabel = document.getElementsByClassName("sidebar-btn-label");
 
         // Changing styles according to need.
         if (numOfExtendedSidebar === currentExtSidebar) {
             extendedSidebars[numOfExtendedSidebar].classList.toggle("hide-element");
-            sidebarBtnPath.style.fill = "rgb(255, 183, 3)";
-            sidebarBtnLabel[numOfExtendedSidebar].style.color = "rgb(255, 183, 3)";
+            // sidebarBtnPath.style.fill = "rgb(255, 183, 3)";
+            // sidebarBtnLabel[numOfExtendedSidebar].style.color = "rgb(255, 183, 3)";
         } else {
             extendedSidebars[numOfExtendedSidebar].classList.add("hide-element");
-            sidebarBtnPath.style.fill = "rgb(255, 255, 255)";
-            sidebarBtnLabel[numOfExtendedSidebar].style.color = "rgb(255, 255, 255)";
+            // sidebarBtnPath.style.fill = "rgb(255, 255, 255)";
+            // sidebarBtnLabel[numOfExtendedSidebar].style.color = "rgb(255, 255, 255)";
         }
     }
 }
@@ -40,6 +40,18 @@ elementsBtn.addEventListener("click", function () {
 const textBtn = document.getElementById("textBtn");
 textBtn.addEventListener("click", function () { 
     togglingCurrentExtSidebar(3);
+});
+
+// Wallpaper button and it's extended sidebar
+const wallpaperBtn = document.getElementById("wallpaperBtn");
+wallpaperBtn.addEventListener("click", function () { 
+    togglingCurrentExtSidebar(4);
+});
+
+// Clipart button and it's extended sidebar
+const clipartBtn = document.getElementById("clipartBtn");
+clipartBtn.addEventListener("click", function () { 
+    togglingCurrentExtSidebar(5);
 });
 
 

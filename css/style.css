@@ -103,13 +103,14 @@ body .body .sidebar {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  overflow: auto;
 }
 
 body .body .sidebar .sidebar-btns {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[4];
-      grid-template-rows: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
   row-gap: 2rem;
 }
 
@@ -119,6 +120,9 @@ body .body .sidebar .sidebar-btns .sidebar-btn {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   padding: 0.5rem 0;
+  background: #000000;
+  color: #ffffff;
+  border: none;
 }
 
 body .body .sidebar .sidebar-btns .sidebar-btn:hover, body .body .sidebar .sidebar-btns .sidebar-btn:focus {
