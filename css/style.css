@@ -155,8 +155,8 @@ body .body .element-sidebar-ext, body .body .template-sidebar-ext {
   overflow: auto;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (172px)[8];
-      grid-template-rows: repeat(8, 172px);
+  -ms-grid-rows: (130px)[8];
+      grid-template-rows: repeat(8, 130px);
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
   row-gap: 1rem;
