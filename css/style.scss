@@ -136,7 +136,7 @@ body {
             width: 360px;
         }
 
-        .element-sidebar-ext, .template-sidebar-ext, .clipart-sidebar-ext {
+        .element-sidebar-ext, .template-sidebar-ext, .clipart-sidebar-ext, .wallpaper-sidebar-ext {
             display: grid;
             overflow: auto;
             grid-template-columns: repeat(2, 1fr);
@@ -145,7 +145,7 @@ body {
             row-gap: 1rem;
             padding: 1rem;
 
-            .add-element-btn, .add-template-btn, .add-clipart-btn {
+            .add-element-btn, .add-template-btn, .add-clipart-btn, .add-wallpaper-btn {
                 color: $sidebar-font-color;
                 border-radius: 10px;
                 border: 1px solid $sidebar-font-color;
@@ -174,6 +174,18 @@ body {
 
                 &:hover {
                     border: none;
+                }
+            }
+        }
+
+        .wallpaper-sidebar-ext {
+            .add-wallpaper-btn {
+                padding: 0;
+
+                .wallpaper-image{
+                    // width: 100%;
+                    // height: 100%;
+                    border-radius:10px;
                 }
             }
         }
