@@ -149,7 +149,7 @@ body .body .extended-sidebar {
   width: 360px;
 }
 
-body .body .element-sidebar-ext, body .body .template-sidebar-ext {
+body .body .element-sidebar-ext, body .body .template-sidebar-ext, body .body .clipart-sidebar-ext {
   display: -ms-grid;
   display: grid;
   overflow: auto;
@@ -161,20 +161,20 @@ body .body .element-sidebar-ext, body .body .template-sidebar-ext {
   padding: 1rem;
 }
 
-body .body .element-sidebar-ext .add-element-btn, body .body .element-sidebar-ext .add-template-btn, body .body .template-sidebar-ext .add-element-btn, body .body .template-sidebar-ext .add-template-btn {
+body .body .element-sidebar-ext .add-element-btn, body .body .element-sidebar-ext .add-template-btn, body .body .element-sidebar-ext .add-clipart-btn, body .body .template-sidebar-ext .add-element-btn, body .body .template-sidebar-ext .add-template-btn, body .body .template-sidebar-ext .add-clipart-btn, body .body .clipart-sidebar-ext .add-element-btn, body .body .clipart-sidebar-ext .add-template-btn, body .body .clipart-sidebar-ext .add-clipart-btn {
   color: white;
   border-radius: 10px;
   border: 1px solid white;
   padding: 1rem;
 }
 
-body .body .element-sidebar-ext .add-element-btn:hover, body .body .element-sidebar-ext .add-template-btn:hover, body .body .template-sidebar-ext .add-element-btn:hover, body .body .template-sidebar-ext .add-template-btn:hover {
+body .body .element-sidebar-ext .add-element-btn:hover, body .body .element-sidebar-ext .add-template-btn:hover, body .body .element-sidebar-ext .add-clipart-btn:hover, body .body .template-sidebar-ext .add-element-btn:hover, body .body .template-sidebar-ext .add-template-btn:hover, body .body .template-sidebar-ext .add-clipart-btn:hover, body .body .clipart-sidebar-ext .add-element-btn:hover, body .body .clipart-sidebar-ext .add-template-btn:hover, body .body .clipart-sidebar-ext .add-clipart-btn:hover {
   cursor: pointer;
   color: #ffb703;
   border: 1px solid #ffb703;
 }
 
-body .body .element-sidebar-ext .add-element-btn svg, body .body .element-sidebar-ext .add-element-btn img, body .body .element-sidebar-ext .add-template-btn svg, body .body .element-sidebar-ext .add-template-btn img, body .body .template-sidebar-ext .add-element-btn svg, body .body .template-sidebar-ext .add-element-btn img, body .body .template-sidebar-ext .add-template-btn svg, body .body .template-sidebar-ext .add-template-btn img {
+body .body .element-sidebar-ext .add-element-btn svg, body .body .element-sidebar-ext .add-element-btn img, body .body .element-sidebar-ext .add-template-btn svg, body .body .element-sidebar-ext .add-template-btn img, body .body .element-sidebar-ext .add-clipart-btn svg, body .body .element-sidebar-ext .add-clipart-btn img, body .body .template-sidebar-ext .add-element-btn svg, body .body .template-sidebar-ext .add-element-btn img, body .body .template-sidebar-ext .add-template-btn svg, body .body .template-sidebar-ext .add-template-btn img, body .body .template-sidebar-ext .add-clipart-btn svg, body .body .template-sidebar-ext .add-clipart-btn img, body .body .clipart-sidebar-ext .add-element-btn svg, body .body .clipart-sidebar-ext .add-element-btn img, body .body .clipart-sidebar-ext .add-template-btn svg, body .body .clipart-sidebar-ext .add-template-btn img, body .body .clipart-sidebar-ext .add-clipart-btn svg, body .body .clipart-sidebar-ext .add-clipart-btn img {
   width: 100%;
   height: 100%;
 }
