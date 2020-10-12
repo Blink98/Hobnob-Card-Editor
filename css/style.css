@@ -2,6 +2,37 @@
   margin: 0;
   padding: 0;
   outline: none;
+  scrollbar-color: rgba(167, 175, 193, 0.42) rgba(255, 255, 255, 0.75);
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-track, :-webkit-scrollbar-track-piece {
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 175, 193, 0.42);
+  background-clip: padding-box;
+  border: 0px solid transparent;
+  border-radius: 100px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  min-height: 48px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(167, 175, 193, 0.52);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(167, 175, 193, 0.72);
 }
 
 body .body {
@@ -201,6 +232,55 @@ body .body .wallpaper-sidebar-ext .add-wallpaper-btn {
 
 body .body .wallpaper-sidebar-ext .add-wallpaper-btn .wallpaper-image {
   border-radius: 10px;
+}
+
+body .body .clipart-sidebar-ext {
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  -ms-grid-rows: max-content;
+      grid-template-rows: -webkit-max-content;
+      grid-template-rows: max-content;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+body .body .clipart-sidebar-ext .clipartRowContainer {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 2rem;
+}
+
+body .body .clipart-sidebar-ext .clipartRowContainer h3 {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+body .body .clipart-sidebar-ext .clipartRowContainer .clipartRow {
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  width: 344px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: -webkit-box;
+  padding-bottom: 1rem;
+}
+
+body .body .clipart-sidebar-ext .clipartRowContainer .clipartRow .add-clipart-btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 60px;
+}
+
+body .body .clipart-sidebar-ext .clipartRowContainer .clipartRow .add-clipart-btn img {
+  width: auto;
+  height: 100%;
 }
 
 body .body .property-bar {
